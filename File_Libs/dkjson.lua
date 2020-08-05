@@ -1,9 +1,10 @@
-       -- Module options:
+    -- Module options:
     local always_try_using_lpeg = true
     local register_global_module_table = false
     local global_module_name = 'json'
 
     --[==[
+
 David Kolf's JSON module for Lua 5.1/5.2
 ========================================
 *Version 2.4*
@@ -48,15 +49,20 @@ cycles.
     `tables` is a set to detect reference cycles. It is created
     temporary when absent. Every table that is currently processed
     is used as key, the value is `true`.
+
 When `state.buffer` was set, the return value will be `true` on
 success. Without `state.buffer` the return value will be a string.
+
 `json.decode (string [, position [, null]])`
 --------------------------------------------
+
 Decode `string` starting at `position` or at 1 if `position` was
 omitted.
+
 `null` is an optional value to be returned for null values. The
 default is `nil`, but you could set it to `json.null` or any other
 value.
+
 The return values are the object or `nil`, the position of the next
 character that doesn't belong to the object, and in case of errors
 an error message.
@@ -101,6 +107,7 @@ this module tries to load LPeg to replace the `decode` function. The
 speed increase is significant. You can get the LPeg module at
   <http://www.inf.puc-rio.br/~roberto/lpeg/>.
 When LPeg couldn't be loaded, the pure Lua functions stay active.
+
 In case you don't want this module to require LPeg on its own,
 disable the option `always_try_using_lpeg` in the options section at
 the top of the module.
@@ -113,17 +120,26 @@ using:
     json = require "dkjson".use_lpeg()
 Alternatively you can use `pcall` so the JSON module still works when
 LPeg isn't found.
+
     json = require "dkjson"
     pcall (json.use_lpeg)
+
 ### `json.using_lpeg`
+
 This variable is set to `true` when LPeg was loaded successfully.
+
 ---------------------------------------------------------------------
+
 Contact
 -------
+
 You can contact the author by sending an e-mail to 'david' at the
 domain 'dkolf.de'.
+
 ---------------------------------------------------------------------
+
 *Copyright (C) 2010-2013 David Heiko Kolf*
+
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
 "Software"), to deal in the Software without restriction, including
@@ -131,8 +147,10 @@ without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
+
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -141,11 +159,13 @@ BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
 ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 <!-- This documentation can be parsed using Markdown to generate HTML.
      The source code is enclosed in a HTML comment so it won't be displayed
      by browsers, but it should be removed from the final HTML file as
      it isn't a valid HTML comment (and wastes space).
   -->
+
 <!--]==]
 
 -- global dependencies:
