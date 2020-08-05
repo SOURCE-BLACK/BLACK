@@ -10,7 +10,7 @@ chmod +x ts
 get() {
 rm -fr BLACK.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/SOURCE-BLACK/BLACK/master/BLACK.lua"
+	wget "https://raw.githubusercontent.com/SOURCE-BLACK/BLACK/master/BLACK.lua"
 lua start.lua
 }
 installall(){
